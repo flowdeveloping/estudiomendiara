@@ -1,0 +1,53 @@
+.custom-button.btn {
+    height: 500px;
+    width: 250px;
+    padding: 0;
+    margin: 2rem;
+  }
+  
+
+
+  /* Estilo para el botón de Blog */
+  .blog-button {
+    background-color: #2D375B; /* Color personalizado para Blog */
+    border-color: #2D375B;
+  }
+  
+  .blog-button:hover {
+    background-color: #1a223b; /* Color al pasar el ratón */
+    border-color: #1a223b;
+  }
+  
+  /* Estilo para el botón de Sobre mí */
+  .sobre-mi-button {
+    background-color: #25707D; /* Color personalizado para Sobre mí */
+    border-color: #25707D;
+  }
+  
+  .sobre-mi-button:hover {
+    background-color: #1e5e69; /* Color al pasar el ratón */
+    border-color: #1e5e69;
+  }
+  
+  /* Estilo para el botón de Áreas de Práctica */
+  .areas-button {
+    background-color: #0B828E; /* Color personalizado para Áreas de Práctica */
+    border-color: #0B828E;
+  }
+  
+  .areas-button:hover {
+    background-color: #086a71; /* Color al pasar el ratón */
+    border-color: #086a71;
+  }
+  
+  /* Estilo para el botón de Contáctame */
+  .contact-button {
+    background-color: #29A1B3; /* Color personalizado para Contáctame */
+    border-color: #29A1B3;
+  }
+  
+  .contact-button:hover {
+    background-color: #218a9b; /* Color al pasar el ratón */
+    border-color: #218a9b;
+  }
+  

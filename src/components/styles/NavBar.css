@@ -1,0 +1,34 @@
+.top-bar {
+  background-color: #29A1B3; /* Fondo azul */
+  height: 30px; /* Altura del bloque azul */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  position: fixed; /* Fijo en la parte superior */
+  top: 0; /* Arriba de la página */
+  left: 0; /* Alineado a la izquierda */
+  z-index: 9999; /* Asegura que esté en la parte de arriba */
+}
+
+.navbar-custom {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 20px; /* Añade padding lateral para separar */
+}
+
+.navbar {
+  margin: 0; /* Sin margen */
+}
+
+.nav-link-custom {
+  margin: 20px 15px 0; /* Margen superior de 20px, y laterales de 15px */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.navbar-custom .navbar-collapse {
+  display: flex;
+  align-items: center; /* Asegura que el botón esté alineado verticalmente */
+}
+
+.consulta-button {
+  margin-left: 2rem; /* Aumenta este valor si es necesario */
+}
+

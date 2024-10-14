@@ -1,0 +1,49 @@
+.custom-card {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    width: 100%;
+    padding: 1rem;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: row; /* Mantiene la dirección de la fila */
+    align-items: center; /* Centra verticalmente el contenido */
+    width: 100%;
+    max-width: 900px; /* Ajusta el tamaño total de la tarjeta si es necesario */
+}
+
+.card-img-left {
+    width: 50%; /* Ajusta según el tamaño que quieras para la imagen */
+    height: auto;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    margin-right: 1rem; /* Espacio entre la imagen y el texto */
+}
+
+.card-text-right {
+    flex: 1;
+    padding-left: 5rem;
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+}
+
+/* Si deseas agregar un poco de margen alrededor de la tarjeta */
+.card {
+    margin: 0 auto; /* Centra la tarjeta en el contenedor padre */
+}
+
+/* Estilos del botón personalizado */
+/* Estilos del botón personalizado */
+.consulta-button {
+    background-color: #278D9C; /* Color personalizado */
+    border: none; /* Elimina el borde predeterminado */
+    border-radius: 100px; /* Esquinas redondeadas */
+    height: 50px; /* Altura del botón (ajústala si es necesario) */
+    width: 150px; /* Anchura del botón (ajústala si es necesario) */
+    color: white; /* Color del texto (opcional) */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
+}
+
+.consulta-button:hover {
+    background-color: #1e6b76; /* Color más oscuro al pasar el mouse (opcional) */
+}

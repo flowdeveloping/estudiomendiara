@@ -1,0 +1,6 @@
+.carousel-item img {
+    width: 100vw; /* Ancho completo de la ventana */
+    height: 150vh; /* Altura completa de la ventana */
+    object-fit: cover; /* Mantiene la proporción y cubre el área */
+  }
+  
