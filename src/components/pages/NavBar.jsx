@@ -31,7 +31,7 @@ function NavBar() {
           <Button 
             variant="custom" 
             className="consulta-button" 
-            style={{ marginLeft: '20px' }} // Aumenta este valor para probar
+            style={{ marginLeft: '20px', marginTop: '20px' }} // Aumenta este valor para probar
           >
             Agendar Cita
           </Button>

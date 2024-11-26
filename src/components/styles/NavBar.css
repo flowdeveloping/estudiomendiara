@@ -11,7 +11,7 @@
 .navbar-custom {
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0 20px; /* Añade padding lateral para separar */
+  padding: 20px 80px; /* Añade padding lateral para separar */
 }
 
 .navbar {

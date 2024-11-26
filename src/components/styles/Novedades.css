@@ -1,0 +1,11 @@
+/* En tu archivo CSS */
+.btn-primary {
+    background-color: #299FB2; /* El color que deseas para el fondo */
+    border-color: #299FB2;     /* El mismo color para los bordes */
+  }
+  
+  .btn-primary:hover {
+    background-color: #1f7a8c; /* Color cuando el botón se pasa por encima */
+    border-color: #1f7a8c;
+  }
+  
