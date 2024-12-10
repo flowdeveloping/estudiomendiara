@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom'; // Importa Link de react-router-dom
 import '../styles/NavBar.css';
 
 function NavBar() {
@@ -22,11 +23,11 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link className="nav-link-custom" href="#home">HOME</Nav.Link>
-            <Nav.Link className="nav-link-custom" href="#link">ÁREAS DE PRÁCTICA</Nav.Link>
-            <Nav.Link className="nav-link-custom" href="#about">SOBRE MI</Nav.Link>
-            <Nav.Link className="nav-link-custom" href="#blog">BLOG</Nav.Link>
-            <Nav.Link className="nav-link-custom" href="#contact">CONTACTO</Nav.Link>
+            <Nav.Link className="nav-link-custom" as={Link} to="/">HOME</Nav.Link>
+            <Nav.Link className="nav-link-custom" as={Link} to="/areas-de-practica">ÁREAS DE PRÁCTICA</Nav.Link>
+            <Nav.Link className="nav-link-custom" as={Link} to="/sobre-mi">SOBRE MI</Nav.Link>
+            <Nav.Link className="nav-link-custom" as={Link} to="/blog">BLOG</Nav.Link>
+            <Nav.Link className="nav-link-custom" as={Link} to="/contacto">CONTACTO</Nav.Link>
           </Nav>
           <Button 
             variant="custom" 
