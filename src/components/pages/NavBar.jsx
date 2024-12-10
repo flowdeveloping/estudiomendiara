@@ -27,7 +27,9 @@ function NavBar() {
             <Nav.Link className="nav-link-custom" as={Link} to="/areas-de-practica">ÁREAS DE PRÁCTICA</Nav.Link>
             <Nav.Link className="nav-link-custom" as={Link} to="/sobre-mi">SOBRE MI</Nav.Link>
             <Nav.Link className="nav-link-custom" as={Link} to="/blog">BLOG</Nav.Link>
-            <Nav.Link className="nav-link-custom" as={Link} to="/contacto">CONTACTO</Nav.Link>
+            <Nav.Link className="nav-link-custom" href="#contacto">
+  CONTACTO
+</Nav.Link>
           </Nav>
           <Button 
             variant="custom" 

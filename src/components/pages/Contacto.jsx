@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 
 function BasicExample() {
   return (
-    <Form className="p-4" style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <Form  id="contacto" className="p-4" style={{ maxWidth: '600px', margin: '0 auto' }}>
       {/* Título y Subtítulo */}
       <div className="text-center mb-4">
         <h1>¡Consultanos Ahora!</h1>
