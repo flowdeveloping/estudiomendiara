@@ -1,6 +1,6 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';  // Bootstrap CSS
-import "mdb-react-ui-kit/dist/css/mdb.min.css";  // MDBootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
+import "mdb-react-ui-kit/dist/css/mdb.min.css"; // MDBootstrap CSS
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importa Router y Routes
 import NavBar from './components/pages/NavBar';
 import Carousel from './components/pages/Inicio/Carousel';
@@ -19,10 +19,27 @@ function App() {
       <NavBar />
       <Routes>
         {/* Rutas principales */}
-        <Route path="/" element={<><Carousel /><Areasdepractica /><Botones /><Sobremi /><Testimonios /><Novedades /><Contacto /><Footer /></>} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Carousel />
+              <Areasdepractica />
+              <Botones />
+              <Sobremi />
+              <Testimonios />
+              <Novedades />
+              <Contacto />
+              <Footer />
+            </>
+          }
+        />
         
         {/* Ruta para la página Blog */}
         <Route path="/blog" element={<Blog />} />
+
+        {/* Ruta específica para Contacto */}
+        <Route path="/contacto" element={<Contacto />} />
       </Routes>
     </Router>
   );
