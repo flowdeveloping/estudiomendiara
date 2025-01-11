@@ -1,5 +1,5 @@
 import BlogPortada from '../pages/Blog/BlogPortada';
-import NovedadesSeparados from '../pages/Blog/NovedadesSeparados'
+import Novedades from './Blog/Novedades'
 import Footer from '../pages/Footer';
 
 
@@ -10,7 +10,7 @@ const Blog = () => {
     <div>
 
       <BlogPortada />
-      <NovedadesSeparados/>
+      <Novedades/>
       <Footer/>
     </div>
   );

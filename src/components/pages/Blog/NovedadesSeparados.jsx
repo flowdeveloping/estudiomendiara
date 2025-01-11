@@ -2,65 +2,68 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Container, Row, Col } from "react-bootstrap"; // Importamos estos componentes
+import { Container } from "react-bootstrap"; // Importamos el contenedor
 import "../../styles/Novedades.css";
+import { useParams } from "react-router-dom"; // Para obtener el `id` de los parámetros de la URL
 
-function BasicExample() {
-  const [novedades, setNovedades] = useState([]); // Estado para almacenar las novedades
+function ArticleDetail() {
+  const [article, setArticle] = useState(null); // Estado para almacenar un solo artículo
   const [error, setError] = useState(null); // Estado para errores
+  const { id } = useParams(); // Obtenemos el `id` de los parámetros de la URL
 
   useEffect(() => {
-    // Función para obtener novedades desde el backend
-    const fetchNovedades = async () => {
+    // Función para obtener un artículo específico desde el backend
+    const fetchArticle = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/articles"); // URL del backend
-        setNovedades(response.data); // Guardamos las novedades en el estado
+        const response = await axios.get(`http://localhost:3000/api/articles/${id}`); // URL con el ID dinámico
+        setArticle(response.data); // Guardamos el artículo en el estado
       } catch (err) {
-        setError(err.message); // Capturamos errores
+        console.error("Error fetching article:", err); // Para ver el error completo en consola
+        setError("Ocurrió un error al cargar el artículo."); // Mensaje de error amigable
       }
     };
 
-    fetchNovedades(); // Llamamos a la función al montar el componente
-  }, []);
+    fetchArticle(); // Llamamos a la función al montar el componente
+  }, [id]); // `id` como dependencia para recargar cuando cambie
+
+  if (error) {
+    return (
+      <Container>
+        <h3 className="mt-5 text-center text-danger">{error}</h3>
+      </Container>
+    );
+  }
+
+  if (!article) {
+    return (
+      <Container>
+        <h3 className="mt-5 text-center">Cargando artículo...</h3>
+      </Container>
+    );
+  }
 
   return (
     <Container>
-      <h3 className="mt-5 text-center">Novedades</h3>
-      {error && <p className="text-danger text-center">Error: {error}</p>} {/* Muestra el error si ocurre */}
-      <Row className="justify-content-center">
-        {novedades.map((novedad, index) => (
-          <Col md="4" className="mb-4" key={novedad._id || index}>
-            <Card style={{ width: "26rem", position: "relative", border: "none" }}>
-              <Card.Img
-                variant="top"
-                src={novedad.image_url.secure_url}
-                style={{ height: "450px", width: "350px", objectFit: "cover" }}
-              />
-              <Card.Body
-                style={{
-                  position: "absolute",
-                  bottom: "25px",
-                  left: "50px",
-                  right: "150px",
-                  color: "white",
-                  padding: "20px",
-                }}
-              >
-                <Card.Title className="text-start">{novedad.title}</Card.Title>
-                <Card.Text className="text-start">{novedad.short_description}</Card.Text>
-                <Button
-                  className="btn-primary w-100"
-                  onClick={() => window.open("https://www.google.com", "_blank")}
-                >
-                  Ver más
-                </Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+      <h3 className="mt-5 text-center">{article.title}</h3>
+      <Card className="mt-4 mx-auto" style={{ width: "50rem" }}>
+        <Card.Img
+          variant="top"
+          src={article.image_url?.secure_url || "/placeholder.jpg"} // Imagen con placeholder
+          style={{ height: "450px", objectFit: "cover" }}
+        />
+        <Card.Body>
+          <Card.Title>{article.title}</Card.Title>
+          <Card.Text>{article.description}</Card.Text>
+          <Button
+            className="btn-primary w-100"
+            onClick={() => window.open(article.link || "/", "_blank")}
+          >
+            Leer más
+          </Button>
+        </Card.Body>
+      </Card>
     </Container>
   );
 }
 
-export default BasicExample;
+export default ArticleDetail;
